@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte moderna */
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
@@ -12,6 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed; /* Menu fixo */
+    width: 100%; /* Ocupa toda a largura da tela */
+    top: 0;
+    z-index: 1000; /* Mantém o menu acima de outros elementos */
+}
+
+header .logo h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -27,15 +38,68 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.apresentacao {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+}
+
+.slide {
+    display: flex;
+    animation: slide 15s infinite; /* Controla a duração do slide */
+}
+
+.slide img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da div */
+    height: 100%; /* Faz a imagem ocupar toda a altura da div */
+    object-fit: cover; /* Cobre o espaço sem distorcer a imagem */
+    margin-right: 15px; /* Espaçamento entre as imagens */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+    34% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+    67% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
 }
 
 section {
-    padding: 20px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limita a largura da seção */
+    text-align: center; /* Centraliza o texto */
+}
+
+h2 {
+    color: #ff0000; /* Vermelho */
+}
+
+.sobre {
+    line-height: 32px; /* Espaçamento de linhas */
+}
+
+.horario-lista {
+    list-style-type: none; /* Remove a marcação padrão */
+    padding: 0; /* Remove o padding */
+    margin: 0; /* Remove a margem */
 }
 
 .produto-lista {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Centraliza os produtos */
 }
 
 .produto {
@@ -46,10 +110,13 @@ section {
     flex: 1 1 30%;
     cursor: pointer;
     transition: 0.3s;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .produto:hover {
     background-color: #e0e0e0;
+    transform: scale(1.05);
 }
 
 footer {
@@ -66,20 +133,48 @@ footer {
     background-color: #25D366; /* Verde do WhatsApp */
     color: white;
     border-radius: 50px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 40px; /* Ajusta o tamanho do ícone */
+    height: 40px;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centraliza os elementos do formulário */
 }
 
 form label {
     margin: 5px 0;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     margin-bottom: 10px;
     padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Torna o input responsivo */
+    max-width: 400px; /* Limita a largura do input */
+}
+
+form button {
+    background-color: #ff0000; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%; /* Torna o botão responsivo */
+    max-width: 200px; /* Limita a largura do botão */
+}
+
+form button:hover {
+    background-color: #cc0000; /* Vermelho mais escuro */
 }

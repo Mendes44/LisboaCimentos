@@ -1,8 +1,9 @@
 function redirectWhatsApp(produto, descricao) {
-    const mensagem = `Olá, gostaria de saber mais sobre ${produto}: ${descricao}`;
+    const mensagem = `Olá, estou vindo do site e gostaria de saber mais sobre o valor deste produto: ${produto}. Descrição: ${descricao}`;
     const url = `https://api.whatsapp.com/send?phone=553133690000&text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
 }
+
 
 document.getElementById('form-contato').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -13,7 +14,7 @@ document.getElementById('form-contato').addEventListener('submit', function(even
     const mensagem = document.getElementById('mensagem').value;
 
     const emailBody = `Nome: ${nome}\nMotivo: ${motivo}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
-    const mailtoLink = `mailto:lisboacimentos@gmail.com?subject=Contato do Site&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:marcosmendesm10@gmail.com?subject=Contato do Site&body=${encodeURIComponent(emailBody)}`;
 
     window.open(mailtoLink, '_blank');
     alert('Formulário enviado com sucesso!');
