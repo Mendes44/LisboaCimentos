@@ -15,13 +15,12 @@ body {
 }
 
 header {
-    background-color: #ff0000; /* Vermelho */
+    background-color: #d8c6c6; /* Vermelho */
     color: white;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Menu fixo */
     width: 100%; /* Ocupa toda a largura da tela */
     top: 0;
     z-index: 1000; /* Mantém o menu acima de outros elementos */
@@ -29,6 +28,11 @@ header {
 
 header .logo h1 {
     margin: 0;
+}
+
+#nav-list {
+    display: flex;
+    justify-content: end;
 }
 
 .menu-toggle {
@@ -208,14 +212,26 @@ form button:hover {
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
+    .container-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        background-color: #cc0000;
+        padding: 20px;
+    }
+
     nav ul {
         display: none; /* Esconde o menu em telas menores */
         flex-direction: column; /* Menu em coluna */
         width: 100%; /* Ocupa toda a largura */
-        background-color: #ff0000; /* Fundo vermelho */
-        position: absolute; /* Fica sobreposto */
-        top: 60px; /* Abaixo do header */
-        left: 0;
+        background-color: #baa0a0; /* Fundo vermelho */
+        text-align: center;
+        gap: 10px;
     }
 
     nav.active ul {
