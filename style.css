@@ -289,7 +289,7 @@ form button:hover {
     .nav-list {
         display: none; /* Esconde o menu em telas menores */
         flex-direction: column; /* Menu em coluna */
-        background-color: #baa0a0; /* Fundo vermelho */
+        background-color: #cc000080; /* Vermelho com 50% de opacidade */; /* Fundo vermelho */
         text-align: center;
         justify-content: end;
         gap: 10px;
@@ -315,6 +315,33 @@ form button:hover {
         margin-right: 0; /* Remove a margem entre as imagens */
         margin-bottom: 15px; /* Espaçamento vertical entre as imagens */
     }
+
+    /* Sobre */
+    .ctn-sobre {
+        background-color: rgba(200, 200, 200, 0.7); /* Cinza claro com 70% de opacidade */
+        margin: 30px 0px 30px 0px;
+    }
+    .sobre h2 {
+        font-size: 22px;
+        color: #cc000080; /* Vermelho com 50% de opacidade */
+    }
+    
+    .sobre h3 {
+        font-size: 18px;
+        margin: 0;
+        color: #cc000080; /* Vermelho com 50% de opacidade */
+    }
+
+    .sobre p {
+        font-size: 16px;
+        font-style: italic;
+    }
+
+    .horario-lista {
+        font-size: 16px;
+        margin: 0;
+    }
+
 
     
 }
