@@ -8,14 +8,8 @@ body {
     color: #333;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto; /* Centraliza o conteúdo */
-}
-
 header {
-    background-color: #d8c6c6; /* Vermelho */
+    background-color: #cc0000; /* Vermelho */
     color: white;
     padding: 15px 0;
     display: flex;
@@ -25,14 +19,17 @@ header {
     top: 0;
     z-index: 1000; /* Mantém o menu acima de outros elementos */
 }
+/* 
+header div {
+    display: flex;
+    align-items: center;
+} */
+
+
+
 
 header .logo h1 {
     margin: 0;
-}
-
-#nav-list {
-    display: flex;
-    justify-content: end;
 }
 
 .menu-toggle {
@@ -50,9 +47,11 @@ header .logo h1 {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     display: flex; /* Flex para itens do menu */
+    text-align: right;
 }
+
 
 nav ul li {
     margin: 0 15px;
@@ -64,12 +63,13 @@ nav ul li a {
     font-weight: bold;
 }
 
+
 nav ul li a:hover {
     text-decoration: underline;
 }
 
 .banner {
-    background: url('assents/img/banner-bg.jpg') no-repeat center center/cover; /* Exemplo de fundo */
+    background: url('assents/img/blocos.png') no-repeat center center/cover; /* Exemplo de fundo */
     height: 60vh; /* Altura do banner */
     display: flex;
     flex-direction: column;
@@ -77,6 +77,12 @@ nav ul li a:hover {
     align-items: center;
     color: white;
     text-align: center;
+}
+
+.img-banner a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .apresentacao {
@@ -120,12 +126,49 @@ h2, h3 {
 
 .sobre {
     line-height: 32px; /* Espaçamento de linhas */
+    background-image: url(assents/img/fundo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre h2 {
+    color:  #f0f0f0;
+    margin: 10px;
+    font-size: 38px;
+}
+
+.sobre p {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    line-height: 32px;
+    max-width: 800px;
+    font-size: 25px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre h3 {
+    color: #f0f0f0;
+    margin-top: 150px;
+    font-size: 32px;
 }
 
 .horario-lista {
     list-style-type: none; /* Remove a marcação padrão */
     padding: 0; /* Remove o padding */
     margin: 0; /* Remove a margem */
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 22px;
+    font-style: italic;
 }
 
 .produto-lista {
@@ -150,6 +193,13 @@ h2, h3 {
     background-color: #e0e0e0;
     transform: scale(1.05);
 }
+
+.nome-produtos {
+    text-align: left;
+}
+
+
+/* Rodapé */
 
 footer {
     background-color: #333;
@@ -210,11 +260,22 @@ form button:hover {
     background-color: #cc0000; /* Vermelho mais escuro */
 }
 
+.desenvolvedor {
+    font-style: italic;
+}
+
+.desenvolvedor .texto-destaque {
+    font-weight: bold;
+}
+
+
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
     .container-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        margin: 5px;
+        padding: 5px;
     }
 
     .menu-toggle {
@@ -225,12 +286,12 @@ form button:hover {
         padding: 20px;
     }
 
-    nav ul {
+    .nav-list {
         display: none; /* Esconde o menu em telas menores */
         flex-direction: column; /* Menu em coluna */
-        width: 100%; /* Ocupa toda a largura */
         background-color: #baa0a0; /* Fundo vermelho */
         text-align: center;
+        justify-content: end;
         gap: 10px;
     }
 
@@ -243,7 +304,7 @@ form button:hover {
     }
 
     .produto {
-        flex: 1 1 45%; /* Produtos ocupam lado a lado em telas pequenas */
+        flex: 1 1 20%; /* Produtos ocupam lado a lado em telas pequenas */
     }
 
     .slide {
@@ -254,4 +315,6 @@ form button:hover {
         margin-right: 0; /* Remove a margem entre as imagens */
         margin-bottom: 15px; /* Espaçamento vertical entre as imagens */
     }
+
+    
 }
