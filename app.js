@@ -4,7 +4,6 @@ function redirectWhatsApp(produto, descricao) {
     window.open(url, '_blank');
 }
 
-
 document.getElementById('form-contato').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -20,11 +19,8 @@ document.getElementById('form-contato').addEventListener('submit', function(even
     alert('Formulário enviado com sucesso!');
 });
 
-
-// Menu Sanduiche
-// app.js
-
+// Menu Sanduiche Criado
 document.getElementById('mobile-menu').addEventListener('click', function() {
     const nav = document.querySelector('nav');
-    nav.classList.toggle('active');
+    nav.classList.toggle('active'); // Alterna a classe 'active' no nav
 });
