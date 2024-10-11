@@ -23,14 +23,12 @@ header {
 /* Cabeçalho = Logo e Menu */
 header {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     margin: 0;
+    width: 100%;
+    position: fixed;
 }
-
-.container-menu {
-}
-
 
 
 .logo {
@@ -40,13 +38,19 @@ header {
 
 .logo img {
     margin: 0 auto;
-    width: 200px;
+    width: 150px;
 }
 
 .nav-list {
     list-style-type: none;
     padding: 10px;
     display: flex; /* Flex para itens do menu */
+}
+
+nav.active .nav-list {
+    display: flex; /* Mostra o menu quando ativo */
+    max-height: 500px; /* Altura máxima para permitir a expansão do menu */
+    opacity: 1; /* Torna o menu visível */
 }
 
 .nav-list li {
@@ -57,7 +61,7 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     padding: 10px;
 
@@ -83,15 +87,21 @@ header {
 }
 
 /* Banner */
+
+.quebra-linha {
+    height: 150px;
+}
 .banner {
     background: url('assents/img/blocos.png') no-repeat center center/cover; /* Exemplo de fundo */
-    height: 60vh; /* Altura do banner */
+    height: 70vh; /* Altura do banner */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1 1;
     align-items: center;
     color: white;
     text-align: center;
+
 }
 
 .img-banner a {
@@ -300,16 +310,24 @@ form button:hover {
         padding: 0px;
     }
 
-    .nav-list {
-        display: none; /* Esconde o menu em telas menores */
-        flex-direction: column; /* Menu em coluna */
-        align-items: center;
-        list-style: none;
-        background-color: #cc000080; /* Vermelho com 50% de opacidade */; /* Fundo vermelho */
+    .menu {
+        position: relative;
+    }
 
-        transition: max-height 0.5s ease-in-out; /* Transição suave na altura*/
-        overflow: hidden; /* Oculta conteudo que transborda */
-        height: 0;
+    .nav-list {
+        position: absolute;
+        left: -45px;
+        top: 10px;
+        align-items: center;
+        flex-direction: column;
+        list-style: none;
+        padding: 10px;
+        background-color: #cc000080; /* Vermelho com 50% de opacidade */; /* Fundo vermelho */
+        
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave na altura e opacidade */
+        overflow: hidden; /* Oculta o conteúdo que transborda */
+        max-height: 0; /* Inicialmente escondido */
+        opacity: 0; /* Inicialmente invisível */
     }
 
     .nav-list li a {
@@ -327,6 +345,8 @@ form button:hover {
     
     /* Menu toogle */
     .menu-toggle {
+        position: absolute;
+        right: 10;
         display: flex;
         flex-direction: column;
         cursor: pointer;
