@@ -90,6 +90,8 @@ nav.active .nav-list {
 
 .quebra-linha {
     height: 150px;
+    margin: 0;
+    padding: 0;
 }
 .banner {
     background: url('assents/img/blocos.png') no-repeat center center/cover; /* Exemplo de fundo */
@@ -383,6 +385,10 @@ form button:hover {
     }
 
     /* Sobre */
+    .quebra-linha {
+        height: 0;
+        width: 0;
+    }
     .ctn-sobre {
         background-color: rgba(200, 200, 200, 0.7); /* Cinza claro com 70% de opacidade */
         margin: 30px 0px 30px 0px;
