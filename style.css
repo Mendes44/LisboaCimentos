@@ -202,6 +202,7 @@ h2, h3 {
     display: flex;
     flex-wrap: wrap; /* Permite quebra de linha */
     justify-content: center; /* Centraliza os produtos */
+    /* flex: 1 1 30%; Tamanho flexível para os produtos */
 }
 
 .produto {
@@ -209,7 +210,6 @@ h2, h3 {
     border: 1px solid #ddd;
     margin: 10px;
     padding: 20px;
-    flex: 1 1 30%; /* Tamanho flexível para os produtos */
     cursor: pointer;
     transition: 0.3s;
     border-radius: 5px;
@@ -219,6 +219,11 @@ h2, h3 {
 .produto:hover {
     background-color: #e0e0e0;
     transform: scale(1.05);
+}
+
+.produto img {
+    max-width: 200px;
+    flex: 1 1 0;
 }
 
 .nome-produtos {
@@ -299,7 +304,7 @@ form button:hover {
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
-    header {
+     header {
         position: relative;
         width: 100%;
     }
@@ -413,6 +418,22 @@ form button:hover {
         font-size: 16px;
         margin: 0;
     }
+
+    .produto-lista {
+        display: flex;
+    }
+
+    .produto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+        flex: 1 1 30%;
+        max-width: 300px;
+    }
+
 
 
     
