@@ -438,3 +438,50 @@ form button:hover {
 
     
 }
+
+section {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.produto-lista {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.produtos{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    flex-direction: column;
+
+    border: 2px solid #ddd; /* Cor e espessura da borda */
+    border-radius: 8px; /* Arredondamento das bordas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra: deslocamento X, deslocamento Y, desfoque, cor */
+    background-color: #fff;
+}
+
+.produto {
+    border: 2px solid ;
+    width: 200px;
+    height: 100%;
+
+    border: 2px solid #ddd; /* Cor e espessura da borda */
+    border-radius: 8px; /* Arredondamento das bordas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra: deslocamento X, deslocamento Y, desfoque, cor */
+    background-color: #fff; /* Cor de fundo */
+}
+
+.sobre {
+    margin-top: 10px;
+}
+
+.banner {
+    margin-top: 10px;
+}
+
+.contato {
+    margin-top: 10px;
+}
