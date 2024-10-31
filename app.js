@@ -1,4 +1,15 @@
-function redirectWhatsApp(produto, descricao) {
+// function redirectWhatsApp(produto, descricao) {
+//     // const mensagem = `Olá, estou vindo do site e gostaria de saber mais sobre o valor deste produto: ${produto}. Descrição: ${descricao}`;
+//     // const url = `https://api.whatsapp.com/send?phone=553133690000&text=${encodeURIComponent(mensagem)}`;
+//     // window.open(url, '_blank');
+
+    
+// }
+
+function redirectWhatsApp(element) {
+    const produto = element.querySelector('.produto-titulo').textContent;
+    const descricao = element.querySelector('.produto-descricao').textContent;
+
     const mensagem = `Olá, estou vindo do site e gostaria de saber mais sobre o valor deste produto: ${produto}. Descrição: ${descricao}`;
     const url = `https://api.whatsapp.com/send?phone=553133690000&text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
