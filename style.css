@@ -14,6 +14,14 @@ body {
     color: #333;
 }
 
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 header {
     background-color: #cc0000; /* Vermelho */
     color: white;
@@ -34,6 +42,10 @@ header {
     margin: 0;
     width: 100%;
     position: fixed;
+}
+
+h2 {
+    text-align: center;
 }
 
 
@@ -145,18 +157,6 @@ nav.active .nav-list {
     100% { transform: translateX(-200%); }
 }
 
-section {
-    padding: 40px 20px;
-    margin: 20px 0;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2, h3 {
-    text-align: center; /* Centraliza os títulos */
-}
-
 .sobre {
     line-height: 32px; /* Espaçamento de linhas */
     background-image: url(assents/img/fundo.jpg);
@@ -167,42 +167,60 @@ h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Adiciona a posição relativa para o conteúdo do texto */
+    border-radius: 8px; /* Borda arredondada */
+    overflow: hidden; /* Garante que o conteúdo não vaze pelas bordas */
+}
+
+.sobre::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(0, 0, 0, 0.4); /* Fundo com opacidade para melhorar contraste */
+    z-index: 1; /* Coloca o fundo acima da imagem */
+    border-radius: 8px; /* Aplica borda arredondada ao fundo */
+}
+
+.sobre .container {
+    position: relative;
+    z-index: 2; /* Coloca o conteúdo acima do fundo com opacidade */
+    text-align: center; /* Centraliza o conteúdo */
+    color: white; /* Texto branco para contraste */
+    max-width: 900px; /* Define largura máxima */
+    padding: 0 20px; /* Ajusta o espaçamento interno */
 }
 
 .sobre h2 {
-    color:  #f0f0f0;
-    margin: 10px;
     font-size: 38px;
+    margin: 10px;
 }
 
 .sobre p {
-    color: #ffffff;
-    text-align: center;
-    margin-top: 50px;
-    line-height: 32px;
-    max-width: 800px;
     font-size: 25px;
-    
-    align-items: center;
-    justify-content: center;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
 .sobre h3 {
-    color: #f0f0f0;
-    margin-top: 150px;
     font-size: 32px;
+    margin-top: 50px;
 }
 
 .horario-lista {
-    list-style-type: none; /* Remove a marcação padrão */
-    padding: 0; /* Remove o padding */
-    margin: 0; /* Remove a margem */
-    text-align: center;
-    color: #ffffff;
-    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
     font-size: 22px;
     font-style: italic;
 }
+
+.horario-lista li {
+    margin: 10px 0;
+}
+
 
 /* PRODUTOS */
   
