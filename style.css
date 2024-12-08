@@ -276,6 +276,7 @@ nav.active .nav-list {
     flex: 1 1 20%;
 
     gap: 5px;
+    min-height: 300px;
 }
 
 .card {
@@ -286,11 +287,14 @@ nav.active .nav-list {
     justify-content: space-around;
     padding: 10px;
     max-width: 300px;
+    height: 380px;
     /* border: 1px solid #25D366; */
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(37, 211, 102, 0.3); /* Sombra com cor #25D366 */
 
     transition: 0.3s;
+    overflow: hidden;
+    text-align: center;
 }
 
 
@@ -309,6 +313,7 @@ nav.active .nav-list {
     border-radius: 8px; /* Adiciona bordas arredondadas para um acabamento mais agradável */
     display: block; /* Remove espaçamento extra ao redor da imagem */
     margin: 0 auto; /* Centraliza a imagem dentro do card */
+    flex-shrink: 0; /* Garante que a imagem não encolha*/
 }
 
 
@@ -387,23 +392,26 @@ form button:hover {
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
-     header {
+    header {
         position: relative;
         width: 100%;
     }
-    
+
+    /* Container do menu */
     .container-menu {
         display: flex;
-        justify-content: space-between;
-        gap: 100px;
-        margin: 0px;
-        padding: 0px;
+        justify-content: space-between; /* Garante que a logo e o menu fiquem em extremos opostos */
+        align-items: center; /* Alinha verticalmente */
+        gap: 20px;
+        margin: 0;
+        padding: 0;
     }
 
     .menu {
         position: relative;
     }
 
+    /* Menu lista (dropdown) */
     .nav-list {
         position: absolute;
         left: -45px;
@@ -412,9 +420,8 @@ form button:hover {
         flex-direction: column;
         list-style: none;
         padding: 10px;
-        background-color: #cc000080; /* Vermelho com 50% de opacidade */; /* Fundo vermelho */
-        
-        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave na altura e opacidade */
+        background-color: #cc000080; /* Vermelho com 50% de opacidade */
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave */
         overflow: hidden; /* Oculta o conteúdo que transborda */
         max-height: 0; /* Inicialmente escondido */
         opacity: 0; /* Inicialmente invisível */
@@ -431,12 +438,17 @@ form button:hover {
         max-width: 100px;
         height: auto;
         text-align: center;
+
+        position: absolute;
+        top: 0px;
+        left: -0px;
     }
     
-    /* Menu toogle */
+    /* Menu Toggle - Posicionando à direita */
     .menu-toggle {
         position: absolute;
-        right: 10;
+        top: -20px;  /* Ajusta a posição vertical */
+        right: -100px;  /* Agora fica à direita */
         display: flex;
         flex-direction: column;
         cursor: pointer;
@@ -454,22 +466,75 @@ form button:hover {
         margin: 3px 0; /* Espaçamento entre as barras */
     }
   
-/* LOGO */
+    /* LOGO */
     .logo img {
         width: 100px;
     }
 
-    .produto {
-        flex: 1 1 20%; /* Produtos ocupam lado a lado em telas pequenas */
+    /* Produtos */
+    .container-produtos {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+  
+    .lista {
+        display: flex;
     }
 
-    .slide {
-        flex-direction: column; /* Para telas pequenas, empilha as imagens */
+    .produto-lista {
+        display: flex;
+        flex-wrap: wrap; /* Permite quebra de linha */
+        justify-content: space-between; /* Distribui produtos em linhas */
+        gap: 10px;
     }
 
-    .slide img {
-        margin-right: 0; /* Remove a margem entre as imagens */
-        margin-bottom: 15px; /* Espaçamento vertical entre as imagens */
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 45%; /* Dois produtos lado a lado em telas pequenas */
+        margin-bottom: 20px;
+        min-height: 350px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        background-color: #f9f9f9; /* Fundo claro para os cards */
+        border-radius: 8px; /* Borda arredondada */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
+
+    }
+
+    .card p {
+        word-wrap: break-word; /* Garante que as palavras longas quebrem se necessário */
+        text-align: center;
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+        line-height: 1.5; /* Melhora a legibilidade */
+        margin-top: 10px;
+        flex-grow: 1;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        max-width: 100px; /* Limita a largura das imagens */
+        object-fit: contain; /* Garante que a imagem se ajuste corretamente sem distorção */
+    }
+
+    .card .produto-titulo {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* Ajustes nas imagens dos produtos */
+    .produto img {
+        width: 100%;
+        height: auto;
+        max-width: 90px; /* Limita a largura das imagens */
+        object-fit: contain;
     }
 
     /* Sobre */
@@ -479,7 +544,7 @@ form button:hover {
     }
     .ctn-sobre {
         background-color: rgba(200, 200, 200, 0.7); /* Cinza claro com 70% de opacidade */
-        margin: 30px 0px 30px 0px;
+        margin: 30px 0;
     }
     .sobre h2 {
         font-size: 22px;
@@ -502,41 +567,31 @@ form button:hover {
         margin: 0;
     }
 
-    .produto-lista {
-        display: flex;
+    section {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0;
     }
 
-    .produto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        flex-wrap: wrap;
-        flex: 1 1 30%;
-        max-width: 300px;
+    .sobre {
+        margin-top: 10px;
     }
 
+    .banner {
+        margin-top: 10px;
+    }
 
+    .contato {
+        margin-top: 10px;
+    }
+
+    /* Remover margem à direita */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 
     
 }
 
-section {
-    margin: 0 auto;
-    max-width: 1024px;
-}
-
-
-
-.sobre {
-    margin-top: 10px;
-}
-
-.banner {
-    margin-top: 10px;
-}
-
-.contato {
-    margin-top: 10px;
-}
