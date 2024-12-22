@@ -591,6 +591,19 @@ form button:hover {
         padding: 0;
         width: 100%;
     }
+/* 
+    #redux {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    #redux-img{
+        width: 30px;
+    }
+
+    #redux-img2 {
+        width: 85px;
+    }
 
     
 }
