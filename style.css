@@ -23,24 +23,18 @@ section {
 }
 
 header {
-    background-color: #cc0000; /* Vermelho */
+    /* background-color: #cc0000; Vermelho */
+    background-color: #006400;
     color: white;
-    padding: 10px 0;
+    padding: 75px 0;
+
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%; /* Ocupa toda a largura da tela */
-    top: 0;
     z-index: 1000; /* Mantém o menu acima de outros elementos */
-}
-
-/* Cabeçalho = Logo e Menu */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    width: 100%;
+    
     position: fixed;
 }
 
@@ -52,11 +46,20 @@ h2 {
 .logo {
     display: flex;
     align-items: center;
+
 }
 
 .logo img {
     margin: 0 auto;
-    width: 150px;
+    width: 200px;
+}
+
+.container-white {
+    padding: 9px;
+    margin-top: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
 }
 
 .nav-list {
@@ -76,7 +79,7 @@ nav.active .nav-list {
 }
 
 .nav-list li a {
-    color: white;
+    color: #006400;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -88,7 +91,7 @@ nav.active .nav-list {
 
 
 .nav-list li a:hover {
-    color: #3CB371;
+    color: #006400;
 }
 
 .menu-toggle {
@@ -365,7 +368,8 @@ form textarea {
 }
 
 form button {
-    background-color: #ff0000; /* Vermelho */
+    /* background-color: #ff0000; Vermelho */
+    background-color: #FF6347;
     color: white;
     border: none;
     padding: 10px;
