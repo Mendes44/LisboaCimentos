@@ -399,6 +399,7 @@ form button:hover {
     header {
         position: relative;
         width: 100%;
+        margin: 0;
     }
 
     /* Container do menu */
@@ -413,12 +414,15 @@ form button:hover {
 
     .menu {
         position: relative;
+        display: flex;
     }
 
     /* Menu lista (dropdown) */
     .nav-list {
         position: absolute;
-        left: -55px;
+        display: flex;
+        flex-direction: column;
+        right: -55px; /*Responsavel pela posição do menu quando aparece */
 
 
         align-items: center;
@@ -445,15 +449,14 @@ form button:hover {
         height: auto;
         text-align: center;
 
-        top: 12px;
-        left: 30px;
+        top: 18px;
     }
     
     /* Menu Toggle - Posicionando à direita */
     .menu-toggle {
         position: absolute;
-        top: -30px;  /* Ajusta a posição vertical */
-        right: -100px;  /* Agora fica à direita */
+        top: -20px;  /* Ajusta a posição vertical */
+        right: -20px;  /* Agora fica à direita */
         display: flex;
         flex-direction: column;
         cursor: pointer;
