@@ -501,7 +501,6 @@ form button:hover {
 
     .card {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         flex: 1 1 45%; /* Dois produtos lado a lado em telas pequenas */
@@ -516,7 +515,13 @@ form button:hover {
 
     }
 
-    .card p {
+    .teste2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card  p {
         word-wrap: break-word; /* Garante que as palavras longas quebrem se necessário */
         text-align: center;
         font-size: 14px; /* Ajusta o tamanho da fonte */
@@ -612,6 +617,13 @@ form button:hover {
 
     #redux-img2 {
         width: 85px;
+    }
+
+    #teste {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     
