@@ -57,7 +57,7 @@ h2 {
 .container-white {
     padding: 9px;
     margin-top: 0;
-    background-color: #fff;
+    /* background-color: #fff; */
     position: absolute;
     top: 0;
 }
@@ -79,7 +79,7 @@ nav.active .nav-list {
 }
 
 .nav-list li a {
-    color: #006400;
+    color: #FF6347;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -91,7 +91,7 @@ nav.active .nav-list {
 
 
 .nav-list li a:hover {
-    color: #006400;
+    color: #cc0000;
 }
 
 .menu-toggle {
@@ -418,6 +418,9 @@ form button:hover {
     /* Menu lista (dropdown) */
     .nav-list {
         position: absolute;
+        left: -55px;
+
+
         align-items: center;
         flex-direction: column;
         padding: 20px;
